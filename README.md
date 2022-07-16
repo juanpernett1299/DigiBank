@@ -33,5 +33,11 @@ modificación del nombre se hace a través de un modal que se despliega presiona
 de edición de cada producto, este modal cuenta con el campo de texto para escribir el nuevo nombre
 y el botón que permite lanzar la peticiones PUT para modificar la base de datos.
 
+<img src="/readsource/1.png" alt="first"/>
+
+<img src="/readsource/2.png" alt="second"/>
+
 Similar a la modificación del nombre de los productos, la aplicación de los filtros se hace
 mediante un modal, en el cual se encuentran las opciones de filtro disponibles.
+
+<img src="/readsource/3.png" alt="third"/>
