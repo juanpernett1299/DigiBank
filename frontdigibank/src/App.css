@@ -1,0 +1,80 @@
+body {
+  font-family: 'Poppins', sans-serif !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+  color: white;
+  background-image: url('../public/back.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 70% 40%;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 86vw;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 24rem;
+  filter: drop-shadow(-2px 0px 22px #131313);
+
+}
+
+.filter-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 5rem;
+  margin-left: auto;
+  padding: 0 1rem;
+}
+
+.tab-container {
+  max-width: min-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  color: white;
+  position: 'absolute';
+  width: 400px;
+  background-color: #1a1a1a;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  padding: 1rem;
+  top: '50%' !important;
+  left: '50%' !important;
+}
+
+.textfield {
+  width: 100% !important;
+  margin-bottom: 15px !important;
+}
+
+.MuiFormLabel-root{
+  color: #8a958a !important;
+}
+
+.MuiInputBase-input{
+  color: #8a958a !important;
+}

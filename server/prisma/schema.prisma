@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model cuentas_vista {
+  idCuentas  Int       @id @default(autoincrement())
+  idProducto Int
+  moneda     String    @db.Char(1)
+  monto_max  Float
+  sobregiro  Boolean?
+  productos  productos @relation(fields: [idProducto], references: [idProducto], onUpdate: Restrict, map: "cuentas_vista_ibfk_1")
+
+  @@index([idProducto], map: "idProducto")
+}
+
+model prestamos {
+  idPrestamo      Int       @id @default(autoincrement())
+  idProducto      Int
+  valor_prestamo  Float
+  cantidad_cuotas Int
+  tipo_bien       String    @db.VarChar(20)
+  productos       productos @relation(fields: [idProducto], references: [idProducto], onUpdate: Restrict, map: "prestamos_ibfk_1")
+
+  @@index([idProducto], map: "idProducto")
+}
+
+model prod_seg {
+  idProdSeg      Int           @id @default(autoincrement())
+  idProducto     Int
+  idTipoSegmento Int
+  productos      productos     @relation(fields: [idProducto], references: [idProducto], onUpdate: Restrict, map: "prod_seg_ibfk_1")
+  tipo_segmento  tipo_segmento @relation(fields: [idTipoSegmento], references: [idTipoSegmento], onUpdate: Restrict, map: "prod_seg_ibfk_2")
+
+  @@index([idProducto], map: "idProducto")
+  @@index([idTipoSegmento], map: "idTipoSegmento")
+}
+
+model productos {
+  idProducto    Int             @id @default(autoincrement())
+  nombreProd    String          @db.VarChar(50)
+  clase         String          @db.VarChar(20)
+  tipoProd      String          @db.VarChar(20)
+  cuentas_vista cuentas_vista[]
+  prestamos     prestamos[]
+  prod_seg      prod_seg[]
+}
+
+model tipo_segmento {
+  idTipoSegmento Int        @id @default(autoincrement())
+  nombreSeg      String     @db.VarChar(20)
+  prod_seg       prod_seg[]
+}

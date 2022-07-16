@@ -1,0 +1,15 @@
+.table{
+    border-radius: 10px;
+    box-shadow: rgba(27, 43, 30, 0.397) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+    background-color: rgba(0, 0, 0, 0.171);
+}
+
+.table-head{
+    background-color: #35B639;
+}
+
+.head-cell{
+    font-family: 'Poppins', sans-serif !important;
+    color: white !important;
+    border: none !important;
+}
